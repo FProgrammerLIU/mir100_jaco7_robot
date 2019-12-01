@@ -31,6 +31,14 @@ catkin_make
 source ~/catkin_ws/devel/setup.bash
 ```
 For realsence and Kinect V2 needs SDK.
+## 对齐时间
+断开其他可以获取时间的网络，在每次断开连接之后重新对齐。
+```bash
+# 安装对齐工具
+sudo apt install ntpdate
+# 对齐时间
+sudo ntpdate IP地址
+```
 ## Navigation stack
 ```bash
 # 启动
@@ -67,7 +75,11 @@ roslaunch mir100_jaco7_moveit_config mir_jaco_moveit_excute.launch
 roslaunch mir100_jaco7_app mir100_jaco7_app.launch
 ```
 ## Package links
-aruco_ros: https://github.com/pal-robotics/aruco_ros
-https://github.com/code-iai/iai_kinect2
-https://github.com/QuartzYan/mir_robot
-https://github.com/I-Quotient-Robotics/iqr_pan_tilt
+各组件ROS包，使用参考官方教程。
+- [aruco_ros](https://github.com/pal-robotics/aruco_ros)： 二维码识别
+- [Kinect V2](https://github.com/code-iai/iai_kinect2)： Kinect 深度摄像头
+- [mir_robot](https://github.com/QuartzYan/mir_robot)： MIR移动机器人
+- [iqr_pan_tilt](https://github.com/I-Quotient-Robotics/iqr_pan_tilt)： 云台
+- [kinova-ros](https://github.com/Kinovarobotics/kinova-ros)： kinova机械臂
+- [realsense-ros](https://github.com/IntelRealSense/realsense-ros)： realsense rgbd摄像头
+
